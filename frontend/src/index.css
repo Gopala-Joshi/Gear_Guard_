@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================
+   DESIGN TOKENS (CSS VARIABLES – SAFE)
+   ===================================================== */
+@layer base {
+  :root {
+    /* Backgrounds */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Brand */
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Muted / secondary */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* UI */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.5rem;
+  }
+}
+
+/* =====================================================
+   GLOBAL BASE STYLES
+   ===================================================== */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+/* =====================================================
+   COMPONENT STYLES
+   ===================================================== */
+@layer components {
+  /* ---------- Cards ---------- */
+  .card {
+    @apply bg-card border border-border rounded-lg shadow-sm;
+  }
+
+  .card-hover {
+    @apply transition-shadow hover:shadow-md;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 transition;
+  }
+
+  /* ---------- Navbar ---------- */
+  .nav-link {
+    @apply px-3 py-1.5 text-sm rounded-md transition-colors;
+  }
+
+  .nav-link-active {
+    @apply bg-secondary text-foreground font-medium;
+  }
+
+  .nav-link-inactive {
+    @apply text-muted-foreground hover:text-foreground hover:bg-secondary;
+  }
+
+  /* ---------- Tables ---------- */
+  .table {
+    @apply w-full text-sm border-collapse;
+  }
+
+  .table th {
+    @apply text-left font-medium text-muted-foreground py-3;
+  }
+
+  .table td {
+    @apply py-3 border-t border-border;
+  }
+
+  /* ---------- Status Badges (TAILWIND SAFE) ---------- */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  /* New */
+  .badge-new {
+    @apply bg-blue-500/10 text-blue-600;
+  }
+
+  /* In Progress */
+  .badge-progress {
+    @apply bg-amber-500/10 text-amber-600;
+  }
+
+  /* Success */
+  .badge-success {
+    @apply bg-green-500/10 text-green-600;
+  }
+
+  /* Danger / Failed */
+  .badge-danger {
+    @apply bg-red-500/10 text-red-600;
+  }
+}
+
+/* =====================================================
+   UTILITIES
+   ===================================================== */
+@layer utilities {
+  .page-container {
+    @apply max-w-7xl mx-auto px-6;
+  }
+
+  .section-spacing {
+    @apply mt-6;
+  }
+
+  /* Scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 3px;
+  }
+}
