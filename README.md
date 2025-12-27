@@ -3,9 +3,13 @@ Note for Evaluators
 At the official submission deadline (5:00 PM), the repository encountered Git merge conflicts between the frontend and backend codebases. During resolution, the main branch became inconsistent,affecting code stability and readability.To ensure a clean, conflict-free, and fully functional submission, the repository was restructured shortly after the deadline.The conflicted main branch was removed, and a fresh main branch was created containing the complete and resolved frontend and backend code.
 
 Aditya Parmar - Final Year, Medicaps University
+
 Gopala Joshi(TL) - Final Year, Medicaps University
+
 Karan Aswani - Final Year, Medicaps University
+
 Khushboo Pandey - Final Year, Medicaps University
+
 Here is database structure generator client { provider = "prisma-client-js" }
 
 datasource db { provider = "postgresql" url = env("DATABASE_URL") }
